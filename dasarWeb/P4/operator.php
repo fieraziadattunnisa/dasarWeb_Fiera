@@ -48,4 +48,9 @@ echo "hasil kurang : {$kurang} <br>";
 echo "hasil kali : {$kali} <br>";
 echo "hasil bagi : {$bagi} <br>";
 echo "hasil sisa bagi : {$sisaBagi} <br>";
+
+$hasilIdentik = $a === $b;
+$hasilTidakIdentik = $a !== $b;
+echo "<br> hasil identik : {$hasilIdentik}<br>";
+echo "hasil tidak identik : {$hasilTidakIdentik}<br>";
 ?>
