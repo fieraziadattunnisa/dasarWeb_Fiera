@@ -23,6 +23,7 @@ var_dump($rataRata);
 
 $apakahSiswaLulus = true;
 $apakahSiswaSudahUjian = false;
+echo "<br>";
 var_dump($apakahSiswaLulus);
 echo "<br>";
 var_dump($apakahSiswaSudahUjian);
@@ -30,7 +31,7 @@ var_dump($apakahSiswaSudahUjian);
 $namaDepan = "Ibnu";
 $namaBelakang = "Jakaria";
 $namaLEngkap = "{$namaDepan} {$namaBelakang}";
-echo "Nama Depan : {$namaDepan} <br>";
+echo "<br>Nama Depan : {$namaDepan} <br>";
 echo 'Nama BElakang : ' . $namaBelakang . '<br>';
 echo $namaLEngkap;
 
