@@ -37,4 +37,15 @@ echo "<br> hasil and : {$hasilAnd}<br>";
 echo "hasil or : {$hasilOr}<br>";
 echo "hasil not A : {$hasilNotA}<br>";
 echo "hasil not B : {$hasilNotB}<br>";
+
+$jumlah = $a += $b;
+$kurang = $a -= $b;
+$kali = $a *= $b;
+$bagi = $a /= $b;
+$sisaBagi = $a %= $b;
+echo "<br> hasil jumlah : {$jumlah} <br>";
+echo "hasil kurang : {$kurang} <br>";
+echo "hasil kali : {$kali} <br>";
+echo "hasil bagi : {$bagi} <br>";
+echo "hasil sisa bagi : {$sisaBagi} <br>";
 ?>
