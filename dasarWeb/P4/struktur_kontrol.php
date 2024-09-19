@@ -50,4 +50,17 @@ sort($nilai_siswa);
 $nilai_yang_dipilih = array_slice($nilai_siswa, 2, -2);
 $total_nilai = array_sum($nilai_yang_dipilih);
 echo "<br> total nilai setelah mengabaikan dua nilai tertinggi dan terendah adalah $total_nilai.";
+
+$harga_produk = 120000;
+$diskon = 0;
+if ($harga_produk > 100000) $diskon = 0.2 * $harga_produk;
+$harga_setelah_diskon = $harga_produk - $diskon;
+echo "<br />Harga produk: Rp $harga_produk";
+echo "<br />Diskon: Rp $diskon";
+echo "<br />Harga yang harus dibayar setelah diskon: Rp $harga_setelah_diskon";
+
+$total_poin = 520;
+echo "<br />Total skor pemain adalah $total_poin";
+$hadiah = ($total_poin > 500) ? "YA." : "TIDAK.";
+echo "<br />Apakah pemain mendapatkan hadiah tambahan? $hadiah";
 ?>
