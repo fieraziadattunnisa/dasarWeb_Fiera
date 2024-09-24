@@ -25,9 +25,9 @@
 
 //membuat fungsi
 function perkenalan($nama, $salam = "Assalamualaikum") {
-    echo $salam.", ";
-    echo "<br>Perkenalakan, nama saya ".$nama."<br>";
-    echo "Senang berkenalan dengan anda <br>";
+   echo $salam.", ";
+   echo "<br>Perkenalakan, nama saya ".$nama."<br>";
+   echo "Senang berkenalan dengan anda <br>";
 }
 //memanggil fungsi yang sudah dibuat
 perkenalan("Hamdana","Hallo");
