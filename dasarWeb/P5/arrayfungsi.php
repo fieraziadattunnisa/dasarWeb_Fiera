@@ -30,7 +30,7 @@ $menu = [
     ],
     [
         "nama" => "Kontak"
-    ],
+    ]
 ];
 function tampilkanMenuBertingkat(array $menu) {
     echo "<ul>";
