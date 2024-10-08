@@ -44,7 +44,6 @@
                 echo "<td>" . $dataSiswa[$i][2] . "</td>";
                 echo "<td>" . $dataSiswa[$i][3] . "</td>";
                 echo "</tr>";
-             
                 $totalUmur += $dataSiswa[$i][1];
             }
             echo "</tr>";
