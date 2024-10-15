@@ -1,17 +1,14 @@
 <?php
 if(isset($_POST["submit"])){
-    $targetdir = "uploads/"; // Direktori tujuan untuk menyimpan file
+    $targetdir = "uploads/"; //Direktori tujuan untuk menyimpan file
     $targetfile = $targetdir . basename($_FILES["myfile"]["name"]);
     $filetype = strtolower(pathinfo($targetfile, PATHINFO_EXTENSION));
-    $allowedExtensions = array("jpg", "jpeg", "png", "gif");
-    $maxsize = 5 * 1024 * 1024;
+    $allowedExtensions = array("txt", "pdf", "doc", "docx");
+    $maxsize = 3 * 1024 * 1024;
 
     if(in_array($filetype, $allowedExtensions) && $_FILES["myfile"]["size"] <= $maxsize) {
         if(move_uploaded_file($_FILES["myfile"]["tmp_name"], $targetfile)) {
-            echo "File berhasil diunggah.<br>";
-
-            // Menampilkan gambar thumbnail dengan ukuran lebar 200px
-            echo "<img src='$targetfile' width='200' style='height: auto;'><br>";
+            echo "File berhasil diunggah.";
         } else {
             echo "Gagal mengunggah file.";
         }
