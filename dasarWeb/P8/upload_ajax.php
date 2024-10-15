@@ -1,24 +1,29 @@
 <?php
-if (isset($_FILES['file'])) {
+if (isset($_FILES['files'])) {
     $errors = array();
-    $fileName = $_FILES['file']['name'];
-    $fileSize = $_FILES['file']['size'];
-    $fileType = $_FILES['file']['type'];
-    @$fileExt = strtolower(end(explode(".", $_FILES['file']['name'])));
-    $extensions = array("pdf", "doc", "docx", "txt");
+    $extensions = array("jpg", "jpeg", "png", "gif");
+    $totalFiles = count($_FILES['files']['name']);
+    for ($i = 0; $i < $totalFiles; $i++) {
+        $fileName = $_FILES['files']['name'][$i];
+        $fileSize = $_FILES['files']['size'][$i];
+        $fileType = $_FILES['files']['type'][$i];
+        @$fileExt = strtolower(end(explode(".", $fileName)));
 
-    if (!in_array($fileExt, $extensions)) {
-        $errors[] = "Ekstensi file yang diizinkan adalah PDF, DOC, DOCX, atau TXT.";
+        if (!in_array($fileExt, $extensions)) {
+            $errors[] = "Ekstensi file $fileName yang diizinkan adalah JPG, JPEG, PNG, atau GIF.<br>";
+        }
+
+        if ($fileSize > 2097152) {
+            $errors[] = "Ukuran file $fileName tidak boleh lebih dari 2 MB.<br>";
+        }
+
+        if (empty($errors)) {
+            move_uploaded_file($_FILES['files']['tmp_name'][$i], "images/" . $fileName);
+            echo "File $fileName berhasil diunggah.<br>";
+        }
     }
 
-    if ($fileSize > 2097152) {
-        $errors[] = "Ukuran file tidak boleh lebih dari 2 MB";
-    }
-
-    if (empty($errors) == true) {
-        move_uploaded_file($_FILES['file']['tmp_name'], "documents/" . $fileName);
-        echo "File berhasil diunggah";
-    } else {
+    if (!empty($errors)) {
         echo implode("", $errors);
     }
 }
