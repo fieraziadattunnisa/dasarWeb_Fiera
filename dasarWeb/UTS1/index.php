@@ -62,12 +62,12 @@
         ]
     ];
 
-    // Variables to store form data
+    // Variabel untuk menyimpan data formulir
     $name = "";
     $email = "";
     $comment = "";
 
-    // Check if form was submitted
+    // Periksa apakah formulir telah dikirimkan
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);
