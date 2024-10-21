@@ -104,16 +104,31 @@
         <!-- Menu Section -->
         <section id="menu" class="section" style="display:none;">
             <h2>Our Menu</h2>
-            <?php foreach ($categories as $category): ?>
-                <h3><?php echo $category; ?></h3>
-                <?php foreach ($menuItems[$category] as $item): ?>
-                    <div class="menu-item">
-                        <h4><?php echo $item['name']; ?></h4>
-                        <p><?php echo $item['description']; ?></p>
-                        <span><?php echo $item['price']; ?></span>
-                    </div>
-                <?php endforeach; ?>
-            <?php endforeach; ?>
+            <?php 
+            // Cek jika kategori adalah Makanan
+            if (in_array("Makanan", $categories)) {
+                echo '<h3>Makanan</h3>';
+                foreach ($menuItems["Makanan"] as $item) {
+                    echo '<div class="menu-item">';
+                    echo '<h4>' . $item['name'] . '</h4>';
+                    echo '<p>' . $item['description'] . '</p>';
+                    echo '<span>' . $item['price'] . '</span>';
+                    echo '</div>';
+                }
+            }
+    
+             // Cek jika kategori adalah Minuman
+            if (in_array("Minuman", $categories)) {
+                echo '<h3>Minuman</h3>';
+                foreach ($menuItems["Minuman"] as $item) {
+                    echo '<div class="menu-item">';
+                    echo '<h4>' . $item['name'] . '</h4>';
+                    echo '<p>' . $item['description'] . '</p>';
+                    echo '<span>' . $item['price'] . '</span>';
+                    echo '</div>';
+                }
+            }
+            ?>
         </section>
 
         <!-- About Section -->
@@ -154,13 +169,21 @@
             </form>
 
             <!-- Display Submitted Comment -->
-            <?php if ($name && $email && $comment): ?>
-                <div class="submitted-comment">
-                    <h4>Thank you for your comment, <?php echo $name; ?>!</h4>
-                    <p><strong>Email:</strong> <?php echo $email; ?></p>
-                    <p><strong>Comment:</strong> <?php echo $comment; ?></p>
-                </div>
-            <?php endif; ?>
+            <?php
+            if ($name && $email && $comment) {
+                echo '<div class="submitted-comment">';
+                echo '<h4>Thank you for your comment, ' . $name . '!</h4>';
+                echo '<p><strong>Email:</strong> ' . $email . '</p>';
+                echo '<p><strong>Comment:</strong> ' . $comment . '</p>';
+                echo '</div>';
+            } else {
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    echo '<div class="error-message">';
+                    echo '<p>Please fill out all fields in the form.</p>';
+                    echo '</div>';
+                }
+            }
+            ?>
         </section>
 
     </main>
