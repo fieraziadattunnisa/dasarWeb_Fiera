@@ -167,7 +167,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Delicious Bites | All Rights Reserved</p>
+        <p>&copy; 2024 Delicioso Foody Restaurant | All Rights Reserved</p>
     </footer>
 
     <script>
