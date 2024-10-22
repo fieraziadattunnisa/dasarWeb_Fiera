@@ -6,10 +6,7 @@
 </head>
 <body>
     <?php
-    // Indexed Array for menu categories
     $categories = ["Makanan", "Minuman"];
-
-    // Associative Array for each menu item
     $menuItems = [
         "Makanan" => [
             [
@@ -62,12 +59,12 @@
         ]
     ];
 
-    // Variabel untuk menyimpan data formulir
+   
     $name = "";
     $email = "";
     $comment = "";
 
-    // Periksa apakah formulir telah dikirimkan
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);
@@ -75,7 +72,7 @@
     }
     ?>
 
-    <!-- Header -->
+  
     <header>
         <div class="container">
             <h1>Delicioso Foody Restaurant</h1>
@@ -90,9 +87,9 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+   
     <main>
-        <!-- Home Section -->
+       
         <section id="home" class="section">
             <h2>Welcome to Delicioso Foody Restaurant</h2>
             <p>Since 2002, Delicioso Foody Restaurant has brought Italian cafe culture to Indonesia, offering local cuisine, specialty drinks, 
@@ -101,11 +98,11 @@
             <p>Join us for an amazing dining experience!</p>
         </section>
 
-        <!-- Menu Section -->
+        
         <section id="menu" class="section" style="display:none;">
             <h2>Our Menu</h2>
             <?php 
-            // Cek jika kategori adalah Makanan
+            
             if (in_array("Makanan", $categories)) {
                 echo '<h3>Makanan</h3>';
                 foreach ($menuItems["Makanan"] as $item) {
@@ -117,7 +114,7 @@
                 }
             }
     
-             // Cek jika kategori adalah Minuman
+             
             if (in_array("Minuman", $categories)) {
                 echo '<h3>Minuman</h3>';
                 foreach ($menuItems["Minuman"] as $item) {
@@ -131,7 +128,7 @@
             ?>
         </section>
 
-        <!-- About Section -->
+        
         <section id="about" class="section" style="display:none;">
             <h2>About Us</h2>
             <p>Delicioso Foody Restaurant has been serving delicious food to food lovers since 2002. Our mission is to provide high-quality, 
@@ -141,7 +138,7 @@
                 freshness and convenience, we strive to create an exciting culinary experience for all our customers.</p>
         </section>
 
-        <!-- Contact Section -->
+        
         <section id="contact" class="section" style="display:none;">
             <h2>Contact Us</h2>
             <p>We'd love to hear from you! Whether you have a question about our menu, a reservation inquiry, or anything else, 
@@ -150,7 +147,7 @@
             <p>Phone: +62 8123456789</p>
             <p>Address: Jl. Soekarno Hatta, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</p>
 
-            <!-- Form Komentar -->
+            
             <h3>Leave a Comment</h3>
             <form action="#contact" method="post" class="comment-form">
                 <div class="form-group">
@@ -168,7 +165,7 @@
                 <button type="submit">Submit</button>
             </form>
 
-            <!-- Display Submitted Comment -->
+           
             <?php
             if ($name && $email && $comment) {
                 echo '<div class="submitted-comment">';
@@ -188,19 +185,19 @@
 
     </main>
 
-    <!-- Footer -->
+    
     <footer>
         <p>&copy; 2024 Delicioso Foody Restaurant | All Rights Reserved</p>
     </footer>
 
     <script>
         function showSection(sectionId) {
-            // Hide all sections
+            
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
                 section.style.display = 'none';
             });
-            // Show the selected section
+            
             document.getElementById(sectionId).style.display = 'block';
         }
     </script>
