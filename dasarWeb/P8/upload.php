@@ -6,6 +6,7 @@ if(isset($_POST["submit"])){
     $allowedExtensions = array("txt", "pdf", "doc", "docx");
     $maxsize = 3 * 1024 * 1024;
 
+    
     if(in_array($filetype, $allowedExtensions) && $_FILES["myfile"]["size"] <= $maxsize) {
         if(move_uploaded_file($_FILES["myfile"]["tmp_name"], $targetfile)) {
             echo "File berhasil diunggah.";
