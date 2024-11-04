@@ -1,0 +1,5 @@
+body {
+    background-image: url(3819491.jpg);
+    background-size: 100%; /* Menyesuaikan gambar agar menutupi seluruh latar belakang */
+    background-position: center; /* Menempatkan gambar di tengah */
+}

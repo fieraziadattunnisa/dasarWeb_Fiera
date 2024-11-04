@@ -27,6 +27,7 @@ if ($sql) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>DAFTAR HIJAB</title>
 </head>
 
@@ -60,11 +61,11 @@ if ($sql) {
             }
         ?>
     </section>
-    <h3 class="text-center my-3">DASHBOARD</h3>
-    <div class="card mx-5 py-2 px-3">
+    <h3 class="text-center my-3">DASHBOARD HIJAB</h3>
+    <div class="card mx-5 py-2 px-3" style="background-color: #FDF0F0">
         <section class="my-2 w-100 d-flex justify-content-between align-items-center">
             <h4>TABEL HIJAB</h4>
-            <a href="create.php" class="btn btn-primary">TAMBAH HIJAB</a>
+            <a href="create.php" class="btn " style="background-color: #F1B4BB; font-weight: bold">TAMBAH HIJAB</a>
         </section>
         <section class="card px-3 py-2">
             <table class="table table-hover">
