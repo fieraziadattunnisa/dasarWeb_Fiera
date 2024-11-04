@@ -28,8 +28,8 @@ if (isset($_POST['submit'])) {
     // memasukkan value bersih dari $_POST ke dalam variabel-variabel
     $merk_hijab = htmlspecialchars($_POST['merk_hijab']);   
     $deskripsi = htmlspecialchars($_POST['deskripsi']);
-    $stok = htmlspecialchars($_POST['stok']);
     $harga = htmlspecialchars($_POST['harga']);
+    $stok = htmlspecialchars($_POST['stok']);
     $id_hijab = htmlspecialchars($_POST['id_hijab']);
 
     // mengecek apakah $nama dan $harga sudah terisi
@@ -40,8 +40,8 @@ if (isset($_POST['submit'])) {
         $params = [
             $merk_hijab,
             $deskripsi,
-            $stok,
             $harga,
+            $stok,
             $id_hijab
         ];
         // eksekusi query
@@ -85,14 +85,15 @@ if (isset($_POST['submit'])) {
                 <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"><?= $hijab['deskripsi'] ?></textarea>
             </div>
             <div class="mb-3">
-                <label for="stok" class="form-label">Stok Barang</label>
-                <!-- input stok -->
-                <textarea class="form-control" id="stok" name="stok" rows="3"><?= $hijab['stok'] ?></textarea>
-            </div>
-            <div class="mb-3">
                 <label for="harga" class="form-label">Harga Barang</label>
                 <!-- input harga dengan value yang didapatkan dari variabel barang hasil query php diatas -->
                 <input type="number" class="form-control" id="harga" name="harga" value="<?= $hijab['harga'] ?>" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="stok" class="form-label">Stok Barang</label>
+                <!-- input stok -->
+                <input type="number" class="form-control" id="stok" min="0" name="stok" value="<?= $hijab['stok'] ?>" required>
             </div>
             <!-- mencantumkan id barang untuk digunakan dalam query nantinya -->
             <input type="hidden" name="id_hijab" value="<?= $hijab['id_hijab'] ?>">

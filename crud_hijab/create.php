@@ -7,19 +7,19 @@ if (isset($_POST['submit'])) {
     // memasukkan value bersih dari $_POST ke dalam variabel-variabel
     $merk_hijab = htmlspecialchars($_POST['merk_hijab']);
     $deskripsi = htmlspecialchars($_POST['deskripsi']);
-    $stok = htmlspecialchars($_POST['stok']);
     $harga = htmlspecialchars($_POST['harga']);
+    $stok = htmlspecialchars($_POST['stok']);
 
     // mengecek apakah $nama dan $harga sudah terisi
     if (isset($merk_hijab) && isset($harga)) {
         // query sql
-        $query = "INSERT INTO hijabs (merk_hijab, deskripsi, stok, harga) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO hijabs (merk_hijab, deskripsi, harga, stok) VALUES (?, ?, ?, ?)";
         // parameter atau data yang akan dimasukkan ke dalam tanda tanya (?) di query
         $params = [
             $merk_hijab,
             $deskripsi,
+            $harga,
             $stok,
-            $harga
         ];
         // eksekusi query
         $sql = sqlsrv_query($conn, $query, $params);
@@ -63,14 +63,14 @@ if (isset($_POST['submit'])) {
                 <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
             </div>
             <div class="mb-3">
-                <label for="stok" class="form-label">Stok Barang</label>
-                <!-- input stok -->
-                <textarea class="form-control" id="stok" name="stok" rows="3"></textarea>
-            </div>
-            <div class="mb-3">
                 <label for="harga" class="form-label">Harga Barang</label>
                 <!-- input harga -->
-                <input type="number" class="form-control" id="harga" name="harga" required>
+                <input type="number" class="form-control" id="harga" name="harga" min="0" required>
+            </div>
+            <div class="mb-3">
+                <label for="stok" class="form-label">Stok Barang</label>
+                <!-- input stok -->
+                <input type="number" class="form-control" id="stok" name="stok" min="0"></input>
             </div>
             <!-- tombol kirim yang memiliki nama 'submit' -->
             <button class="btn btn-primary" type="submit" name="submit">TAMBAH</button>

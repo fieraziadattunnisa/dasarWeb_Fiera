@@ -73,8 +73,8 @@ if ($sql) {
                         <th scope="col">NO</th>
                         <th scope="col">MERK HIJAB</th>
                         <th scope="col">DESKRIPSI</th>
-                        <th scope="col">STOK</th>
                         <th scope="col">HARGA</th>
+                        <th scope="col">STOK</th>
                         <th scope="col">AKSI</th>
                     </tr>
                 </thead>
@@ -92,10 +92,10 @@ if ($sql) {
                             <td><?= $hijab['merk_hijab'] ?></td>
                             <!-- mengoutputkan nilai 'deskripsi' dari variabel hijab -->
                             <td><?= $hijab['deskripsi'] ?></td>
-                            <!-- mengoutputkan nilai 'stok' dari variabel hijab -->
-                            <td><?= $hijab['stok'] ?></td>
                             <!-- mengoutputkan nilai 'harga' dari variabel barang lalu diformat agar ada komanya -->
                             <td>Rp <?= number_format($hijab['harga']) ?></td>
+                            <!-- mengoutputkan nilai 'stok' dari variabel hijab -->
+                            <td><?= $hijab['stok'] ?></td>
                             <td class="d-flex">
                                 <!-- link yang menuju ke file update dengan membawa value id di dalam urlnya agar dapat diambil dengan $_GET -->
                                 <a href="update.php?id_hijab=<?= $hijab['id_hijab'] ?>" class="btn btn-primary">
