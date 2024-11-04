@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <h3 class="text-center my-3">CREATE</h3>
+    <h3 class="text-center my-3">TAMBAH DATA</h3>
     <div class="card mx-5 py-2 px-3">
         <form action="create.php" method="POST">
             <div class="mb-3">
