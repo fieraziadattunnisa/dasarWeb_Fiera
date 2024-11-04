@@ -73,6 +73,7 @@ if ($sql) {
                         <th scope="col">NO</th>
                         <th scope="col">MERK HIJAB</th>
                         <th scope="col">DESKRIPSI</th>
+                        <th scope="col">STOK</th>
                         <th scope="col">HARGA</th>
                         <th scope="col">AKSI</th>
                     </tr>
