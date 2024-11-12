@@ -14,7 +14,5 @@ if (isset($_POST['submit'])) {
         $errors = print_r(sqlsrv_errors(), true);
         echo "<script>alert('$errors');</script>";
     }
-} else {
-    echo "biji";
-}
+} 
 ?>
